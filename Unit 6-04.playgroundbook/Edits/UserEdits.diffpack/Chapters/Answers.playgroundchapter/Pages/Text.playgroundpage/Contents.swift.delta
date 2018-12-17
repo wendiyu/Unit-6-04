@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>// Create on: Dec-
+// Created by: Wendi Yu
+// Created for: ICS3U
+// This program prints out the layout for your mailing address 
+
+import Foundation
+
+enum ProvinceAndTerritory : String{
+    case AB
+    case BC
+    case MB
+    case NB
+    case NL
+    case NT
+    case NS
+    case NU
+    case ON
+    case PE
+    case QC
+    case SK
+    case YT
+}
+
+enum StreetTypes : String {
+    case Dr
+    case St
+    case Ave
+    case Bay
+    case Hwy
+    case Lane
+    case Ptway
+    case Rd
+}
+
+struct MailingAddress {
+    var firstName : String
+    var lastName : String
+    var addressNumber : Int
+    var streetAddress : String
+    var streetType : StreetTypes
+    var city : String
+    var province : ProvinceAndTerritory
+    var postalCode : String
+}
+
+let firstNamed = ask("Enter your first name")
+let lastNamed = ask("Enter your last name")
+let addressNumberEntered : Int = askForNumber("Enter your address number")
+let streetAddressEntered = ask("Enter your streer address")
+let streetTypeName = ask("Enter your street type")
+let streetTypeEntered : StreetTypes = StreetTypes(rawValue: streetTypeName)!
+let aCity = ask("Enter your city")
+let provinceEntered : String = ask("Enter your province or territory")
+let aProvince : ProvinceAndTerritory = ProvinceAndTerritory(rawValue: provinceEntered)!
+let aPostalCode = ask("Enter your postal code")
+
+let postalAddress = MailingAddress(firstName: firstNamed, lastName: lastNamed, addressNumber: addressNumberEntered, streetAddress : streetAddressEntered, streetType : streetTypeEntered, city: aCity, province: aProvince, postalCode: aPostalCode)
+
+show("")
+show("Your printed address:")
+show("\(postalAddress.firstName) \(postalAddress.lastName)")
+show("\(postalAddress.addressNumber) \(postalAddress.streetAddress) \(postalAddress.streetType)")
+show("\(postalAddress.city) \(postalAddress.province) \(postalAddress.postalCode)")
+</string>
+			<key>ModifiedRange</key>
+			<string>{145, 1865}</string>
+			<key>OriginalContent</key>
+			<string>show("What is your name?")
+
+let name = ask("Name")
+
+show("Hi " + name)
+</string>
+			<key>OriginalRange</key>
+			<string>{145, 71}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Answers.playgroundchapter/Pages/Text.playgroundpage/Contents.swift</string>
+</dict>
+</plist>
